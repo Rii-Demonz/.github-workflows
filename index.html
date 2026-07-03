@@ -1,0 +1,1107 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toko Ceria - Hosting & VPS Cepat Bayar QRIS</title>
+    <!-- Font & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a1628;
+            color: #e2e8f0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ---------- NAVBAR ---------- */
+        .navbar {
+            background: rgba(10, 22, 40, 0.9);
+            backdrop-filter: blur(12px);
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(37, 99, 235, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: -0.5px;
+        }
+
+        .logo i {
+            color: #2563eb;
+            font-size: 2rem;
+        }
+
+        .logo span {
+            background: linear-gradient(135deg, #2563eb, #60a5fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            list-style: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .nav-menu a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .nav-menu a:hover {
+            color: #60a5fa;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1.5px solid #2563eb;
+            color: #2563eb;
+            padding: 8px 18px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: 0.25s;
+        }
+
+        .btn-outline:hover {
+            background: #2563eb;
+            color: #fff;
+        }
+
+        .btn-primary {
+            background: #2563eb;
+            border: none;
+            color: #fff;
+            padding: 8px 24px;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: 0.25s;
+            box-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: #1d4ed8;
+            transform: scale(1.04);
+            box-shadow: 0 0 32px rgba(37, 99, 235, 0.5);
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 1.6rem;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        /* ---------- HERO ---------- */
+        .hero {
+            padding: 60px 0 50px;
+            background: radial-gradient(ellipse at 30% 20%, rgba(37, 99, 235, 0.12) 0%, transparent 70%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3.1rem;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .hero-text h1 .highlight {
+            background: linear-gradient(135deg, #2563eb, #93c5fd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-text p {
+            font-size: 1.15rem;
+            color: #94a3b8;
+            max-width: 520px;
+            margin-bottom: 28px;
+        }
+
+        .hero-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px 28px;
+            margin-top: 24px;
+        }
+
+        .hero-badges span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+            color: #94a3b8;
+        }
+
+        .hero-badges i {
+            color: #2563eb;
+        }
+
+        .hero-cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 8px;
+        }
+
+        .btn-hero {
+            padding: 14px 36px;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            transition: 0.25s;
+        }
+
+        .btn-hero.primary {
+            background: #2563eb;
+            color: #fff;
+            box-shadow: 0 8px 30px rgba(37, 99, 235, 0.35);
+        }
+
+        .btn-hero.primary:hover {
+            background: #1d4ed8;
+            transform: translateY(-3px);
+        }
+
+        .btn-hero.secondary {
+            background: rgba(255, 255, 255, 0.06);
+            color: #e2e8f0;
+            border: 1px solid #334155;
+        }
+
+        .btn-hero.secondary:hover {
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-card {
+            background: linear-gradient(145deg, #0f2137, #0a1628);
+            padding: 30px 28px;
+            border-radius: 32px;
+            border: 1px solid #1e293b;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-card .price-tag {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        .hero-card .price-tag small {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #94a3b8;
+        }
+
+        .hero-card ul {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .hero-card ul li {
+            padding: 6px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #cbd5e1;
+        }
+
+        .hero-card ul li i {
+            color: #2563eb;
+            width: 20px;
+        }
+
+        /* ---------- DOMAIN SEARCH ---------- */
+        .domain-section {
+            padding: 30px 0 50px;
+            background: #0e1a2e;
+            border-radius: 40px;
+            margin: 10px 0 20px;
+        }
+
+        .domain-box {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            background: #121f33;
+            padding: 18px 24px;
+            border-radius: 60px;
+            border: 1px solid #1e293b;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .domain-box input {
+            flex: 1;
+            min-width: 180px;
+            background: transparent;
+            border: none;
+            padding: 12px 6px;
+            font-size: 1rem;
+            color: #e2e8f0;
+            outline: none;
+        }
+
+        .domain-box input::placeholder {
+            color: #64748b;
+        }
+
+        .domain-box .btn-primary {
+            padding: 10px 30px;
+            border-radius: 40px;
+        }
+
+        .domain-prices {
+            display: flex;
+            justify-content: center;
+            gap: 28px;
+            flex-wrap: wrap;
+            margin-top: 16px;
+            font-size: 0.95rem;
+            color: #94a3b8;
+        }
+
+        .domain-prices strong {
+            color: #e2e8f0;
+        }
+
+        /* ---------- PAKET ---------- */
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            text-align: center;
+            margin: 40px 0 10px;
+        }
+
+        .section-sub {
+            text-align: center;
+            color: #94a3b8;
+            margin-bottom: 32px;
+        }
+
+        .package-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 28px;
+            margin: 16px 0 40px;
+        }
+
+        .package-card {
+            background: #0f2137;
+            border-radius: 28px;
+            padding: 28px 22px;
+            border: 1px solid #1e293b;
+            transition: 0.3s;
+            position: relative;
+        }
+
+        .package-card:hover {
+            transform: translateY(-6px);
+            border-color: #2563eb;
+            box-shadow: 0 12px 40px rgba(37, 99, 235, 0.15);
+        }
+
+        .package-card .badge {
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            background: #2563eb;
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 4px 16px;
+            border-radius: 30px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .package-card .name {
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .package-card .price {
+            font-size: 2rem;
+            font-weight: 800;
+            margin: 10px 0 4px;
+            color: #fff;
+        }
+
+        .package-card .price small {
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: #94a3b8;
+        }
+
+        .package-card ul {
+            list-style: none;
+            margin: 18px 0 22px;
+        }
+
+        .package-card ul li {
+            padding: 5px 0;
+            font-size: 0.95rem;
+            color: #cbd5e1;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .package-card ul li i {
+            color: #2563eb;
+            width: 18px;
+        }
+
+        .package-card .btn-primary {
+            width: 100%;
+            padding: 12px;
+            font-size: 1rem;
+            border-radius: 40px;
+        }
+
+        /* ---------- FITUR ---------- */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 24px;
+            margin: 30px 0 40px;
+        }
+
+        .feature-item {
+            background: #0f2137;
+            padding: 24px 16px;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid #1e293b;
+            transition: 0.2s;
+        }
+
+        .feature-item:hover {
+            border-color: #2563eb;
+        }
+
+        .feature-item i {
+            font-size: 2.2rem;
+            color: #2563eb;
+            margin-bottom: 12px;
+        }
+
+        .feature-item h4 {
+            font-size: 1rem;
+            margin-bottom: 4px;
+        }
+
+        .feature-item p {
+            font-size: 0.85rem;
+            color: #94a3b8;
+        }
+
+        /* ---------- PAYMENT LOGO ---------- */
+        .payment-showcase {
+            background: #0e1a2e;
+            padding: 30px 20px;
+            border-radius: 32px;
+            text-align: center;
+            margin: 20px 0 40px;
+            border: 1px solid #1e293b;
+        }
+
+        .payment-logos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 28px 36px;
+            font-size: 1.8rem;
+            color: #94a3b8;
+        }
+
+        .payment-logos .qris-big {
+            font-weight: 800;
+            color: #2563eb;
+            font-size: 2.2rem;
+            letter-spacing: 2px;
+        }
+
+        .payment-logos span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .payment-note {
+            margin-top: 12px;
+            color: #94a3b8;
+            font-size: 0.95rem;
+        }
+
+        .payment-note i {
+            color: #2563eb;
+        }
+
+        /* ---------- TESTIMONI ---------- */
+        .testimoni-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            margin: 20px 0 40px;
+        }
+
+        .testi-card {
+            background: #0f2137;
+            padding: 22px;
+            border-radius: 24px;
+            border: 1px solid #1e293b;
+        }
+
+        .testi-card .avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #2563eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+        }
+
+        .testi-card p {
+            font-size: 0.95rem;
+            color: #cbd5e1;
+            margin-bottom: 8px;
+        }
+
+        .testi-card .nama {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .testi-card .jabatan {
+            font-size: 0.8rem;
+            color: #64748b;
+        }
+
+        /* ---------- FAQ ---------- */
+        .faq-list {
+            max-width: 800px;
+            margin: 20px auto 50px;
+        }
+
+        .faq-item {
+            background: #0f2137;
+            padding: 18px 22px;
+            border-radius: 16px;
+            margin-bottom: 12px;
+            border: 1px solid #1e293b;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .faq-item:hover {
+            border-color: #2563eb;
+        }
+
+        .faq-item .q {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 600;
+        }
+
+        .faq-item .q i {
+            color: #2563eb;
+        }
+
+        .faq-item .a {
+            margin-top: 8px;
+            color: #94a3b8;
+            font-size: 0.95rem;
+            display: none;
+        }
+
+        .faq-item.active .a {
+            display: block;
+        }
+
+        /* ---------- FOOTER ---------- */
+        .footer {
+            background: #060e1a;
+            padding: 40px 0 24px;
+            margin-top: 40px;
+            border-top: 1px solid #1e293b;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer h4 {
+            font-size: 1rem;
+            margin-bottom: 12px;
+            color: #fff;
+        }
+
+        .footer a {
+            display: block;
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 4px 0;
+        }
+
+        .footer a:hover {
+            color: #60a5fa;
+        }
+
+        .footer .social i {
+            font-size: 1.4rem;
+            margin-right: 12px;
+            color: #64748b;
+            transition: 0.2s;
+        }
+
+        .footer .social i:hover {
+            color: #2563eb;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #1e293b;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        /* ---------- RESPONSIVE ---------- */
+        @media (max-width: 850px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-badges {
+                justify-content: center;
+            }
+
+            .hero-cta {
+                justify-content: center;
+            }
+
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                padding: 16px 0;
+                gap: 14px;
+            }
+
+            .nav-menu.open {
+                display: flex;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .nav-actions {
+                margin-left: auto;
+            }
+
+            .package-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 550px) {
+            .package-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+
+            .domain-box {
+                flex-direction: column;
+                border-radius: 32px;
+                background: transparent;
+                border: none;
+            }
+
+            .domain-box input {
+                width: 100%;
+                background: #121f33;
+                border-radius: 40px;
+                padding: 14px 20px;
+                border: 1px solid #1e293b;
+            }
+
+            .domain-box .btn-primary {
+                width: 100%;
+            }
+
+            .payment-logos {
+                gap: 14px;
+                font-size: 1.2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* utility */
+        .text-center {
+            text-align: center;
+        }
+        .mt-2 {
+            margin-top: 12px;
+        }
+        .mt-4 {
+            margin-top: 32px;
+        }
+        .mb-2 {
+            margin-bottom: 12px;
+        }
+        .gap-2 {
+            gap: 8px;
+        }
+        .flex-wrap {
+            flex-wrap: wrap;
+        }
+        .flex {
+            display: flex;
+        }
+        .items-center {
+            align-items: center;
+        }
+        .justify-center {
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============ NAVBAR ============ -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-store"></i>
+                <span>TOKO CERIA</span>
+            </div>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#">Beranda</a></li>
+                <li><a href="#">Hosting</a></li>
+                <li><a href="#">VPS</a></li>
+                <li><a href="#">Domain</a></li>
+                <li><a href="#">Fitur</a></li>
+                <li><a href="#">Harga</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Kontak</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="btn-outline">Login</button>
+                <button class="btn-primary">Daftar</button>
+                <div class="hamburger" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-text">
+                <h1>
+                    ⚡ Hosting & VPS <br>
+                    <span class="highlight">Super Cepat</span> <br>
+                    Bayar Pakai QRIS Tanpa Ribet
+                </h1>
+                <p>
+                    Mulai dari <strong>Rp49.999</strong>/bulan • NVMe SSD • Anti DDoS • 
+                    Payment QRIS All Channel
+                </p>
+                <div class="hero-cta">
+                    <button class="btn-hero primary">Lihat Paket Hosting</button>
+                    <button class="btn-hero secondary">Coba VPS Gratis 7 Hari</button>
+                </div>
+                <div class="hero-badges">
+                    <span><i class="fas fa-check-circle"></i> 99.9% Uptime</span>
+                    <span><i class="fas fa-headset"></i> 24/7 Support</span>
+                    <span><i class="fas fa-lock"></i> SSL Gratis</span>
+                    <span><i class="fas fa-database"></i> Backup Otomatis</span>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="hero-card">
+                    <div style="display:flex;justify-content:space-between;align-items:center;">
+                        <span style="font-weight:600;color:#94a3b8;">VPS NVMe 2</span>
+                        <span style="background:#2563eb;padding:2px 12px;border-radius:30px;font-size:0.7rem;font-weight:700;">POPULER</span>
+                    </div>
+                    <div class="price-tag">
+                        Rp199.999 <small>/bulan</small>
+                    </div>
+                    <ul>
+                        <li><i class="fas fa-microchip"></i> 2 vCPU</li>
+                        <li><i class="fas fa-memory"></i> 4 GB RAM</li>
+                        <li><i class="fas fa-hdd"></i> 100 GB NVMe</li>
+                        <li><i class="fas fa-globe"></i> Unmetered Bandwidth</li>
+                    </ul>
+                    <button class="btn-primary" style="width:100%;padding:12px;border-radius:40px;">Pesan Sekarang</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ DOMAIN SEARCH ============ -->
+    <div class="container">
+        <div class="domain-section">
+            <div style="text-align:center;margin-bottom:16px;">
+                <h3 style="font-size:1.6rem;font-weight:700;">🌐 Cari Domain Impianmu</h3>
+            </div>
+            <div class="domain-box">
+                <input type="text" placeholder="namadomain.com" />
+                <button class="btn-primary"><i class="fas fa-search"></i> Cari</button>
+            </div>
+            <div class="domain-prices">
+                <span><strong>.com</strong> Rp120.000</span>
+                <span><strong>.id</strong> Rp85.000</span>
+                <span><strong>.co.id</strong> Rp75.000</span>
+                <span><strong>.net</strong> Rp110.000</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ PAKET UNGGULAN ============ -->
+    <div class="container">
+        <h2 class="section-title">🚀 Paket Unggulan</h2>
+        <p class="section-sub">Pilih paket yang sesuai dengan kebutuhanmu</p>
+
+        <!-- VPS -->
+        <h3 style="font-weight:700;margin-top:10px;font-size:1.3rem;"><i class="fas fa-server" style="color:#2563eb;"></i> VPS SSD NVMe</h3>
+        <div class="package-grid">
+            <div class="package-card">
+                <div class="badge">HEMAT</div>
+                <div class="name">VPS 1</div>
+                <div class="price">Rp99.999 <small>/bln</small></div>
+                <ul>
+                    <li><i class="fas fa-microchip"></i> 1 vCPU</li>
+                    <li><i class="fas fa-memory"></i> 2 GB RAM</li>
+                    <li><i class="fas fa-hdd"></i> 50 GB NVMe</li>
+                    <li><i class="fas fa-globe"></i> 2 TB Transfer</li>
+                </ul>
+                <button class="btn-primary">Pesan</button>
+            </div>
+
+            <div class="package-card" style="border-color:#2563eb;">
+                <div class="badge" style="background:#f59e0b;">BEST SELLER</div>
+                <div class="name">VPS 2</div>
+                <div class="price">Rp199.999 <small>/bln</small></div>
+                <ul>
+                    <li><i class="fas fa-microchip"></i> 2 vCPU</li>
+                    <li><i class="fas fa-memory"></i> 4 GB RAM</li>
+                    <li><i class="fas fa-hdd"></i> 100 GB NVMe</li>
+                    <li><i class="fas fa-globe"></i> Unmetered</li>
+                </ul>
+                <button class="btn-primary">Pesan</button>
+            </div>
+
+            <div class="package-card">
+                <div class="badge">PRO</div>
+                <div class="name">VPS 3</div>
+                <div class="price">Rp399.999 <small>/bln</small></div>
+                <ul>
+                    <li><i class="fas fa-microchip"></i> 4 vCPU</li>
+                    <li><i class="fas fa-memory"></i> 8 GB RAM</li>
+                    <li><i class="fas fa-hdd"></i> 200 GB NVMe</li>
+                    <li><i class="fas fa-globe"></i> Unmetered</li>
+                </ul>
+                <button class="btn-primary">Pesan</button>
+            </div>
+        </div>
+
+        <!-- Shared Hosting -->
+        <h3 style="font-weight:700;margin-top:30px;font-size:1.3rem;"><i class="fas fa-cloud" style="color:#2563eb;"></i> Shared Hosting</h3>
+        <div class="package-grid">
+            <div class="package-card">
+                <div class="badge">AWAL</div>
+                <div class="name">Ekonomi</div>
+                <div class="price">Rp49.999 <small>/bln</small></div>
+                <ul>
+                    <li><i class="fas fa-database"></i> 10 GB SSD</li>
+                    <li><i class="fas fa-link"></i> 1 Situs</li>
+                    <li><i class="fas fa-wifi"></i> 50 GB Bandwidth</li>
+                    <li><i class="fas fa-envelope"></i> 1 Email</li>
+                </ul>
+                <button class="btn-primary">Pesan</button>
+            </div>
+
+            <div class="package-card">
+                <div class="badge" style="background:#2563eb;">POPULER</div>
+                <div class="name">Deluxe</div>
+                <div class="price">Rp89.999 <small>/bln</small></div>
+                <ul>
+                    <li><i class="fas fa-database"></i> 50 GB SSD</li>
+                    <li><i class="fas fa-link"></i> 10 Situs</li>
+                    <li><i class="fas fa-wifi"></i> Unlimited</li>
+                    <li><i class="fas fa-envelope"></i> 10 Email</li>
+                </ul>
+                <button class="btn-primary">Pesan</button>
+            </div>
+
+            <div class="package-card">
+                <div class="badge">UNLIMITED</div>
+                <div class="name">Ultima</div>
+                <div class="price">Rp149.999 <small>/bln</small></div>
+                <ul>
+                    <li><i class="fas fa-database"></i> 100 GB SSD</li>
+                    <li><i class="fas fa-link"></i> Unlimited Situs</li>
+                    <li><i class="fas fa-wifi"></i> Unlimited</li>
+                    <li><i class="fas fa-envelope"></i> Unlimited Email</li>
+                </ul>
+                <button class="btn-primary">Pesan</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ FITUR UNGGULAN ============ -->
+    <div class="container">
+        <h2 class="section-title">✨ Fitur Unggulan</h2>
+        <p class="section-sub">Kami hadir dengan teknologi terbaik untuk bisnis digital Anda</p>
+        <div class="features-grid">
+            <div class="feature-item"><i class="fas fa-tachometer-alt"></i><h4>NVMe SSD 3x Cepat</h4><p>Kecepatan baca/tulis tinggi</p></div>
+            <div class="feature-item"><i class="fas fa-shield-alt"></i><h4>DDoS & SSL Gratis</h4><p>Keamanan jaringan 24/7</p></div>
+            <div class="feature-item"><i class="fas fa-terminal"></i><h4>Akses Root Penuh</h4><p>Kendali penuh server Anda</p></div>
+            <div class="feature-item"><i class="fas fa-cloud-upload-alt"></i><h4>Backup & Snapshot</h4><p>Perlindungan data rutin</p></div>
+            <div class="feature-item"><i class="fas fa-chart-line"></i><h4>Uptime 99.9%</h4><p>Server selalu online</p></div>
+            <div class="feature-item"><i class="fas fa-headset"></i><h4>Support 24/7</h4><p>Dukungan teknis cepat</p></div>
+        </div>
+    </div>
+
+    <!-- ============ PAYMENT SHOWCASE ============ -->
+    <div class="container">
+        <div class="payment-showcase">
+            <h3 style="font-size:1.6rem;font-weight:700;">💳 Bayar dengan QRIS All Payment</h3>
+            <p style="color:#94a3b8;margin-bottom:16px;">Tanpa KTP • Proses Instant • Semua Channel</p>
+            <div class="payment-logos">
+                <span class="qris-big"><i class="fas fa-qrcode"></i> QRIS</span>
+                <span><i class="fas fa-university"></i> BCA</span>
+                <span><i class="fas fa-university"></i> Mandiri</span>
+                <span><i class="fas fa-university"></i> BNI</span>
+                <span><i class="fas fa-university"></i> BRI</span>
+                <span><i class="fas fa-mobile-alt"></i> OVO</span>
+                <span><i class="fas fa-mobile-alt"></i> Gopay</span>
+                <span><i class="fas fa-mobile-alt"></i> DANA</span>
+                <span><i class="fas fa-mobile-alt"></i> ShopeePay</span>
+            </div>
+            <div class="payment-note">
+                <i class="fas fa-lock"></i> &nbsp; Keamanan terjamin • Pembayaran langsung aktif
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ TESTIMONI ============ -->
+    <div class="container">
+        <h2 class="section-title">💬 Kata Mereka</h2>
+        <p class="section-sub">Dipercaya oleh ribuan pelanggan di Indonesia</p>
+        <div class="testimoni-grid">
+            <div class="testi-card">
+                <div class="avatar">A</div>
+                <p>"VPS super cepat, bayar pakai QRIS langsung aktif. Rekomendasi!"</p>
+                <div class="nama">Andi Pratama</div>
+                <div class="jabatan">Developer, Startup Tech</div>
+            </div>
+            <div class="testi-card">
+                <div class="avatar">S</div>
+                <p>"Hosting murah tapi performa oke. Support responsif banget."</p>
+                <div class="nama">Siti Rahma</div>
+                <div class="jabatan">Owner Toko Online</div>
+            </div>
+            <div class="testi-card">
+                <div class="avatar">R</div>
+                <p>"Domain + hosting satu tempat, praktis. QRIS nya mudah banget."</p>
+                <div class="nama">Rizky Fadillah</div>
+                <div class="jabatan">Digital Marketer</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ FAQ ============ -->
+    <div class="container">
+        <h2 class="section-title">❓ Pertanyaan Umum</h2>
+        <div class="faq-list">
+            <div class="faq-item active" onclick="toggleFaq(this)">
+                <div class="q">Apakah pembayaran wajib KTP? <i class="fas fa-chevron-down"></i></div>
+                <div class="a">Tidak! Kami menerima QRIS semua channel tanpa verifikasi KTP. Cukup scan dan bayar.</div>
+            </div>
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="q">Berapa lama aktivasi VPS? <i class="fas fa-chevron-down"></i></div>
+                <div class="a">Maksimal 15 menit setelah pembayaran terkonfirmasi. Server langsung aktif.</div>
+            </div>
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="q">Bisa refund? <i class="fas fa-chevron-down"></i></div>
+                <div class="a">Ya, kami menyediakan garansi 30 hari uang kembali jika tidak puas.</div>
+            </div>
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="q">OS apa yang tersedia untuk VPS? <i class="fas fa-chevron-down"></i></div>
+                <div class="a">Ubuntu, AlmaLinux, Debian, dan Windows Server (tersedia opsi).</div>
+            </div>
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="q">Dukungan teknis? <i class="fas fa-chevron-down"></i></div>
+                <div class="a">Kami siap membantu 24/7 via live chat dan tiket dukungan.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="logo" style="font-size:1.4rem;margin-bottom:10px;">
+                        <i class="fas fa-store"></i>
+                        <span>TOKO CERIA</span>
+                    </div>
+                    <p style="color:#94a3b8;font-size:0.9rem;max-width:220px;">
+                        Hosting & VPS terbaik di Indonesia. Bayar pakai QRIS tanpa ribet.
+                    </p>
+                </div>
+                <div>
+                    <h4>Layanan</h4>
+                    <a href="#">VPS Hosting</a>
+                    <a href="#">Shared Hosting</a>
+                    <a href="#">Domain</a>
+                    <a href="#">SSL Certificate</a>
+                </div>
+                <div>
+                    <h4>Perusahaan</h4>
+                    <a href="#">Tentang Kami</a>
+                    <a href="#">Karir</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Kontak</a>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <a href="#">Kebijakan Privasi</a>
+                    <a href="#">Syarat & Ketentuan</a>
+                    <a href="#">Kebijakan Refund</a>
+                </div>
+                <div>
+                    <h4>Ikuti Kami</h4>
+                    <div class="social">
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-youtube"></i>
+                        <i class="fab fa-tiktok"></i>
+                        <i class="fab fa-linkedin"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 TOKO CERIA. All rights reserved. Made with <i class="fas fa-heart" style="color:#2563eb;"></i> in Indonesia.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Hamburger menu
+        function toggleMenu() {
+            document.getElementById('navMenu').classList.toggle('open');
+        }
+
+        // FAQ toggle
+        function toggleFaq(el) {
+            el.classList.toggle('active');
+        }
+
+        // close menu on link click (mobile)
+        document.querySelectorAll('#navMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navMenu').classList.remove('open');
+            });
+        });
+    </script>
+
+</body>
+</html>
+```
